@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Kinetic Pulse (light) */
+  --background: #f7f7fb;
+  --foreground: #14141f;
+  --surface: #ffffff;
+  --surface-muted: #f0f1f6;
+  --border: #e4e5ee;
+  --muted-foreground: #77767f;
+
+  --brand: #6366f1;
+  --brand-foreground: #ffffff;
+  --accent: #f97316;
+  --accent-foreground: #ffffff;
+  --accent-strong: #b95f00;
+
+  --danger: #ef4444;
+  --success: #22c55e;
+
+  --font-headline: var(--font-jakarta);
+  --font-body: var(--font-vietnam);
+  --font-terminal: var(--font-jetbrains);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-strong: var(--accent-strong);
+
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+
+  --font-sans: var(--font-body);
+  --font-headline: var(--font-headline);
+  --font-mono: var(--font-terminal);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    /* StudySport Dark */
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f5f5f7;
+    --surface: #131417;
+    --surface-muted: #1a1c21;
+    --border: #24272e;
+    --muted-foreground: #8a8d93;
+
+    --brand: #3a8aff;
+    --brand-foreground: #ffffff;
+    --accent: #ff9130;
+    --accent-foreground: #101014;
+    --accent-strong: #d96d30;
+
+    --font-headline: var(--font-grotesk);
+    --font-body: var(--font-grotesk);
   }
+}
+
+:root[data-theme="dark"] {
+  /* StudySport Dark (forzado desde Ajustes) */
+  --background: #0a0a0a;
+  --foreground: #f5f5f7;
+  --surface: #131417;
+  --surface-muted: #1a1c21;
+  --border: #24272e;
+  --muted-foreground: #8a8d93;
+
+  --brand: #3a8aff;
+  --brand-foreground: #ffffff;
+  --accent: #ff9130;
+  --accent-foreground: #101014;
+  --accent-strong: #d96d30;
+
+  --font-headline: var(--font-grotesk);
+  --font-body: var(--font-grotesk);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
